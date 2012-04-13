@@ -39,6 +39,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\IK\include;$(IncludePath)</IncludePath>
+    <SourcePath>C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\IK\src;$(SourcePath)</SourcePath>
+    <LibraryPath>C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\IK\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
