@@ -39,9 +39,10 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\IK\include;$(IncludePath)</IncludePath>
-    <SourcePath>C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\IK\src;$(SourcePath)</SourcePath>
-    <LibraryPath>C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\IK\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\src\include\vl;C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\src\include;C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\src\include\cl;$(IncludePath)</IncludePath>
+    <SourcePath>C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\src;$(SourcePath)</SourcePath>
+    <LibraryPath>C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\bin;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -58,8 +59,8 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\collections\research\vl-1.3.2\vl-1.3.2\Debug;C:\collections\research\fltk-1.3.x-r7704\fltk-1.3.x-r7704\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>comctl32.lib;glu32.lib;opengl32.lib;vl.lib;fltkd.lib;fltkgld.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\src\include\vl;C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\src\include;C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\src\include\cl;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>comctl32.lib;glu32.lib;opengl32.lib;fltk.lib;fltkgld.lib;fltkforms.lib;fltkgl.lib;fltkimages.lib;fltkjpeg.lib;fltkpng.lib;fltkzlib.lib;README.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -71,14 +72,14 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\collections\research\fltk-1.3.x-r7704\fltk-1.3.x-r7704;C:\collections\research\vl-1.3.2\vl-1.3.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\src\include;C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\src\include\cl;C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\src\include\vl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>C:\collections\research\fltk-1.3.x-r7704\fltk-1.3.x-r7704\lib;C:\collections\research\vl-1.3.2\vl-1.3.2\Release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>comctl32.lib;glu32.lib;opengl32.lib;fltkgl.lib;vl.lib;fltk.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
