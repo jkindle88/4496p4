@@ -31,6 +31,9 @@ class Model
   int GetHandleCount(){
     return mHandleList.size();
   };
+  int GetOpenedFile(){
+	  return mOpenedC3dFile;
+  }
   
   virtual void DrawSkeleton(){};
   virtual void DrawSkeleton(int frame){};

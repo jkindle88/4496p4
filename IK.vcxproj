@@ -100,6 +100,7 @@
     <ClInclude Include="src\RealTimeIKui.h" />
     <ClInclude Include="src\RotateEuler.h" />
     <ClInclude Include="src\Scale.h" />
+    <ClInclude Include="src\Solver.h" />
     <ClInclude Include="src\Trackball.h" />
     <ClInclude Include="src\Transform.h" />
     <ClInclude Include="src\TransformNode.h" />
@@ -120,6 +121,7 @@
     <ClCompile Include="src\RotateEuler.cpp" />
     <ClCompile Include="src\Scale.cpp" />
     <ClCompile Include="src\skel_scanner.cpp" />
+    <ClCompile Include="src\Solver.cpp" />
     <ClCompile Include="src\Trackball.cpp" />
     <ClCompile Include="src\TransformNode.cpp" />
     <ClCompile Include="src\Translate.cpp" />
