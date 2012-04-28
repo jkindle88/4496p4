@@ -141,36 +141,38 @@ void Solution(void *v)
 			//Build C() constraint matrix
 			for(int i = 0; i < numMarkers*3; i+=3)
 			{
-					Vec3d markerPos = m->mOpenedC3dFile->GetMarkerPos(f, i/3);
+				Vec3d markerPos = m->mOpenedC3dFile->GetMarkerPos(f, i/3);
 
-					Vec3d c = (markerPos - m->mHandleList[i/3]->mGlobalPos);
-					C[i*3] = c[0];
-					C[i*3+1] = c[1];
-					C[i*3+2] = c[2];
+				Vec3d c = (markerPos - m->mHandleList[i/3]->mGlobalPos);
+				C[i*3] = c[0];
+				C[i*3+1] = c[1];
+				C[i*3+2] = c[2];
 
-					//Halting condition
-					if(abs(c[0]) > eps || abs(c[1]) > eps || abs(c[2]) > eps)
-					{
-							done = true;
-					}
+				//Halting condition
+				if(abs(c[0]) > eps || abs(c[1]) > eps || abs(c[2]) > eps)
+				{
+					done = true;
+				}
 			}
 
 			//Build J() Jacobian
 			for(int markI = 0; markI < numMarkers; markI++)
 			{
-					for(int dofI = 0; dofI < numDof; dofI++)
-					{
-							int limbI = numLimbs-1;
-							SetJacobianEntry(dofI, markI, m->mLimbs[limbI], Mat4d(vl_one), J); 
-					}
+				for(int dofI = 0; dofI < numDof; dofI++)
+				{
+					int limbI = numLimbs-1;
+					computeJ(dofI, markI, m->mLimbs[limbI], Mat4d(vl_one), J); 
+				}
 			}
 
+			//compute Jtranspose
+			Matd Jtrans = trans(J);
 			//compute J*Jtranspose
-			Matd JJtrans = J*trans(J);
+			Matd JJtrans = J*Jtrans;
 			//take the inverse of J*Jtranspose
-			Matd JJtInv = inv(JJtrans);
+			Matd JJtInv = inv(JJtrans,0,0);
 			//take the Moore-Penrose PI
-			Matd MPPI_J = trans(J)*JJtInv;
+			Matd MPPI_J = Jtrans*JJtInv;
 
 			//Add current step
 			frames[f] = frames[f] + (MPPI_J*C);
@@ -187,64 +189,63 @@ void Solution(void *v)
 
 }
 
-void SetJacobianEntry(int dofIndex, int markIndex, TransformNode *t, Mat4d parentTransform, Matd &Jacobian)
+void computeJ(int dofIndex, int markIndex, TransformNode *t, Mat4d parentT, Matd &J)
 {
-        /*start with the product of all parent transforms*/
-        Mat4d currentTransform = parentTransform;
+        //start with the parent transforms
+        Mat4d current = parentT;
 
-        /*Apply transforms associated with this node
-         * If this node contains the Dof, apply the derivative of that tranform*/
-        for(int transformIndex = 0; transformIndex < t->mTransforms.size(); transformIndex++)
+        //Apply transforms associated with this node
+        for(int i = 0; i < t->mTransforms.size(); i++)
         {       
-                if(t->mTransforms[transformIndex]->IsDof())
+            if(t->mTransforms[i]->IsDof())
+            {
+                bool containsDof = false;
+                for(int dof = 0; dof < t->mTransforms[i]->GetDofCount(); dof++)
                 {
-                        bool containsTHEDof = false;
-                        for(int dof = 0; dof < t->mTransforms[transformIndex]->GetDofCount(); dof++)
-                        {
-                                if(t->mTransforms[transformIndex]->GetDof(dof)->mId == dofIndex)
-                                {
-                                        Mat4d derivativeTransform = t->mTransforms[transformIndex]->GetDerivative(0,dof);
-                                        currentTransform = currentTransform * derivativeTransform;
-                                        containsTHEDof = true;
-                                }
-                        }
-                        if(!containsTHEDof)
-                        {
-                                currentTransform = currentTransform * t->mTransforms[transformIndex]->GetTransform(0);
-                        }
+                    if(t->mTransforms[i]->GetDof(dof)->mId == dofIndex)
+                    {
+                        Mat4d derivativeTransform = t->mTransforms[i]->GetDeriv(dof,false);
+                        current = current * derivativeTransform;
+                        containsDof = true;
+                    }
                 }
-                else
+                if(!containsDof)
                 {
-                        currentTransform = currentTransform * t->mTransforms[transformIndex]->GetTransform(0);
+                    current = current * t->mTransforms[i]->GetTransform(false);
                 }
+            }
+            else
+            {
+				current = current * t->mTransforms[i]->GetTransform(false);
+            }
         }
 
-        /*If this node holds the marker we are evaluating at,
-         * Multiply by that offset and throw the result into the Jacobian*/
         for(int i = 0; i < t->mHandles.size(); i++)
         {
-                if(t->mHandles[i]->mNodeIndex == markIndex)
-                {
-                        Vec4d hk = Vec4d(t->mHandles[i]->mOffset, 1);
-                        Vecd JacobianEntry = currentTransform * hk;
+			//If this is the correct node, add to J
+            if(t->mHandles[i]->mNodeIndex == markIndex)
+            {
+                Vec4d hk = Vec4d(t->mHandles[i]->mOffset, 1);
+                Vecd tempJ = current * hk;
 
-                        double x[3];
-                        x[0] = JacobianEntry[0];
-                        x[1] = JacobianEntry[1];
-                        x[2] = JacobianEntry[2];
+                double x[3];
+                x[0] = tempJ[0];
+                x[1] = tempJ[1];
+                x[2] = tempJ[2];
 
-                        Jacobian[(markIndex*3)+0][dofIndex] = JacobianEntry[0];
-                        Jacobian[(markIndex*3)+1][dofIndex] = JacobianEntry[1];
-                        Jacobian[(markIndex*3)+2][dofIndex] = JacobianEntry[2];
+                J[(markIndex*3)+0][dofIndex] = tempJ[0];
+                J[(markIndex*3)+1][dofIndex] = tempJ[1];
+                J[(markIndex*3)+2][dofIndex] = tempJ[2];
 
-                        return;
-                }
+                return;
+            }
         }
 
-        /*Otherwise, continue on to the children*/
-        for(int childIndex = 0; childIndex < root->mChildren.size(); childIndex++)
+        //else, compute J on the children nodes
+        for(int childIndex = 0; childIndex < t->mChildren.size(); childIndex++)
         {
-                SetJacobianEntry(handleId, dofId, ((TransformNode*)root->mChildren[childIndex]), currentTransform, Jacobian);
+			computeJ(dofIndex, markIndex, ((TransformNode*)t->mChildren[childIndex]), current, J);
         }
 }
+
 

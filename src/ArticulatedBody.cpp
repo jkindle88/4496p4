@@ -39,7 +39,7 @@ void ArticulatedBody::SetDofs(Matd &frames, int frameNum)
   mDofList.SetDofs(tempVec);
   Mat4d invHeadMatrix = vl_I;
   for(int i = 0; i < ((TransformNode*)mChildren[0])->mTransforms.size(); i++)
-    invHeadMatrix *= ((TransformNode*)mChildren[0])->mTransforms[i]->GetTransform();
+    invHeadMatrix *= ((TransformNode*)mChildren[0])->mTransforms[i]->GetTransform(false);
 	
   invHeadMatrix = inv(invHeadMatrix);
   UpdateUpMatrix(Mat4d(vl_I), invHeadMatrix);
@@ -50,7 +50,7 @@ void ArticulatedBody::SetDofs(Vecd &Q)
   mDofList.SetDofs(Q);
   Mat4d invHeadMatrix = vl_I;
   for(int i = 0; i < ((TransformNode*)mChildren[0])->mTransforms.size(); i++)
-    invHeadMatrix *= ((TransformNode*)mChildren[0])->mTransforms[i]->GetTransform();
+    invHeadMatrix *= ((TransformNode*)mChildren[0])->mTransforms[i]->GetTransform(false);
   invHeadMatrix = inv(invHeadMatrix);
 
   UpdateUpMatrix(Mat4d(vl_I), invHeadMatrix);
@@ -62,7 +62,7 @@ void ArticulatedBody::DrawSkeleton()
   
   Mat4d invHeadMatrix = vl_I;
   for(int i = 0; i < ((TransformNode*)mChildren[0])->mTransforms.size(); i++)
-    invHeadMatrix *= ((TransformNode*)mChildren[0])->mTransforms[i]->GetTransform();
+    invHeadMatrix *= ((TransformNode*)mChildren[0])->mTransforms[i]->GetTransform(false);
 	
   invHeadMatrix = inv(invHeadMatrix);
   UpdateUpMatrix(Mat4d(vl_I), invHeadMatrix);
@@ -86,7 +86,7 @@ void ArticulatedBody::InitModel()
  
   Mat4d invHeadMatrix = vl_I;
   for(int i = 0; i < ((TransformNode*)mChildren[0])->mTransforms.size(); i++)
-    invHeadMatrix *= ((TransformNode*)mChildren[0])->mTransforms[i]->GetTransform();
+    invHeadMatrix *= ((TransformNode*)mChildren[0])->mTransforms[i]->GetTransform(false);
   invHeadMatrix = inv(invHeadMatrix);
   UpdateUpMatrix(vl_I, invHeadMatrix);  
 

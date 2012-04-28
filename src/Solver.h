@@ -17,10 +17,6 @@ public:
 	//Main Loop
 	void solve();
 
-	//Utility functions to calculate constraints and gradients
-	void computeConstraints(int frameNumber,bool create);
-	Vecd computeGradient(int frameNumber);
-
 	//Vars
 	double mEps;
 	double mStep;

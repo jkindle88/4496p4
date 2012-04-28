@@ -155,7 +155,7 @@ void TransformNode::UpdateUpMatrix(Mat4d currTransform, Mat4d invHeadMatrix)
   mParentTransform = currTransform;
   mLocalTransform = vl_I;
   for( int i = 0; i < mTransforms.size(); i++ )
-    mLocalTransform *= mTransforms[i]->GetTransform();  
+    mLocalTransform *= mTransforms[i]->GetTransform(false);  
    
   currTransform *= mLocalTransform;
 

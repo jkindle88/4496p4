@@ -70,13 +70,27 @@ void Translate::Apply()
   
 }
 
-Mat4d Translate::GetTransform()
-{	
+Mat4d Translate::GetTransform(bool b)
+{
   Mat4d m = vl_I;
+  if (b) { return m; }
+
   m[0][3] = mOffset[0];
   m[1][3] = mOffset[1];
   m[2][3] = mOffset[2];
   m[3][3] = 1;
   
   return m;
+}
+
+Mat4d Translate::GetDeriv(int dof, bool b){
+	Mat4d m = vl_0;
+	if (b) { return m; }
+  
+	m[0][3] = mOffset[0];
+	m[1][3] = mOffset[1];
+	m[2][3] = mOffset[2];
+	m[3][3] = 1;
+  
+	return m;
 }
