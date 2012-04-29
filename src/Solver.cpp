@@ -50,7 +50,6 @@ void Solver::solve() {
 	// Loop over all valid frames
 	for (int f = 0; f < mMaxFrames; f++)
 	{
-		std::cout << "Starting frame " << f << std::endl;
 		// Build C[]
 		buildConstraintMat(f);
 
@@ -75,7 +74,6 @@ void Solver::solve() {
 			//Update objective function
 			o += cLength; 
 		}
-		std::cout << "o = " << o << std::endl;
 		
 		// Main loop
 		double e = mEps;
@@ -138,26 +136,23 @@ void Solver::solve() {
 				newO += cLength; 
 			}
 
-			
-			if (newO < o)
-			{
-				
-				if (newO > mEps && iterCount > 0 && iterCount % sIFreq == 0)
-				{
-					s *= sIF;
-				}
 
-				o = newO;
-				
+			// Attempting to make sure we don't go infinite...
+			if (newO < o)
+			{		
+				if (newO > mEps && iterCount > 0 && iterCount % 20 == 0)
+				{
+					s *= 3.0;
+				}
+				o = newO;	
 			}
 			else
 			{
 				stepCount++;
-
 				// Decrease step size
-				s = s / sDF;
+				s = s / 2.0;
 				
-				// based on how many times we've had to decrease the step, choose different options
+				// based on how many times we've had to decrease the step size, choose different options
 				if (stepCount < mMaxIters)
 				{
 					// Reset to the previous dofs and try again
@@ -166,27 +161,25 @@ void Solver::solve() {
 				else if (stepCount < eIFreq*mMaxIters)
 				{
 					// Try increasing epsilon
-					e *= eIF;
+					e *= 3.0;
 
 					// Reset to the previous dofs and try again
 					mModel->SetDofs(prevDofs);
 				}
 				else
 				{
-					// Otherwise, give up
+					// Otherwise, halt or we will never finish
 					o = 0.0;
 				}
 			}
-
-			// Update iteration counter
 			iterCount++;
 		}
+
 		// Update the frame counter
 		UI->mFrameCounter_cou->value(f);
 
 		//Refresh the screen
 		UI->mGLWindow->flush();
-		std::cout << "Ending frame " << f << std::endl;
 	}	
 }
 

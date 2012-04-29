@@ -1,61 +1,9 @@
-﻿Build started 4/29/2012 6:45:46 AM.
+﻿Build started 4/29/2012 6:36:24 PM.
      1>Project "C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\IK.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating "Release\IK.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "Release\IK.unsuccessfulbuild".
        ClCompile:
-         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\src\include" /I"C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\src\include\cl" /I"C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\src\include\vl" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt src\ArticulatedBody.cpp src\C3dFileInfo.cpp src\Command.cpp src\Dof.cpp src\GLPrimitives.cpp src\Main.cpp src\Marker.cpp src\ModelParser.cpp src\PhylterGLWindow.cpp src\RealTimeIKui.cpp src\RotateEuler.cpp src\Scale.cpp src\skel_scanner.cpp src\Solver.cpp src\Trackball.cpp src\TransformNode.cpp src\Translate.cpp src\UICallback.cpp
-         ArticulatedBody.cpp
-         C3dFileInfo.cpp
-     1>src\C3dFileInfo.cpp(21): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
-     1>src\C3dFileInfo.cpp(41): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
-         Command.cpp
-     1>src\Command.cpp(47): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
-         Dof.cpp
-         GLPrimitives.cpp
-         Main.cpp
-         Marker.cpp
-         ModelParser.cpp
-     1>skel.y(364): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
-     1>skel.y(380): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
-     1>skel.y(574): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(188) : see declaration of 'strncpy'
-     1>skel.y(798): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
-         PhylterGLWindow.cpp
-         RealTimeIKui.cpp
-         RotateEuler.cpp
-     1>src\RotateEuler.cpp(37): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
-         Scale.cpp
-     1>src\Scale.cpp(24): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
-     1>src\Scale.cpp(49): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>src\Scale.cpp(54): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>src\Scale.cpp(59): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-         skel_scanner.cpp
-     1>c:\users\joe\documents\visual studio 2010\projects\ik\4496p4\src\ModelParser.h(29): warning C4005: 'CONST' : macro redefinition
-                 C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\windef.h(149) : see previous definition of 'CONST'
-         Solver.cpp
-         Trackball.cpp
-         TransformNode.cpp
-         Translate.cpp
-     1>src\Translate.cpp(24): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
-     1>src\Translate.cpp(52): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>src\Translate.cpp(57): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-     1>src\Translate.cpp(62): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
-         UICallback.cpp
+         All outputs are up-to-date.
        Link:
          c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\IK.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\lib" comctl32.lib glu32.lib opengl32.lib fltkgl.lib vl.lib fltk.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\IK.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\IK.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\IK.lib" /MACHINE:X86 Release\ArticulatedBody.obj
          Release\C3dFileInfo.obj
@@ -188,4 +136,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:28.68
+Time Elapsed 00:00:04.41

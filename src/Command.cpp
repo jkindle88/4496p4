@@ -38,7 +38,7 @@ void LoadModel(void *v)
 {
   char *params = (char*)v;
   if(!params){
-    params = (char*)fl_file_chooser("Open File?", "{*.skel}", "../4496p4/src/skels" );
+    params = (char*)fl_file_chooser("Open File?", "{*.skel}", "../src/skels" );
   }
 
   if(!params)
@@ -79,7 +79,7 @@ void LoadC3d(void *v)
   }
   char *params = (char*)v;
   if(!params){
-    params = fl_file_chooser("Open File?", "{*.c3d}", "../4496p4/src/mocap" );
+    params = fl_file_chooser("Open File?", "{*.c3d}", "../src/mocap" );
   }
 
   if(!params)
@@ -111,11 +111,11 @@ void Solution(void *v)
 	int maxIterations = 25;  // Play with this
 	int maxFrames = m->mOpenedC3dFile->GetFrameCount();
 
-	// setup solver
+	// Setup solver
 	Solver s(eps, step, maxIterations, maxFrames, m);
 
 	cout << "Solver beginning..." << endl;
-	// run solver
+	// Run solver
 	s.solve();
 	cout << "Solver complete." << endl;
 }
