@@ -1,5 +1,191 @@
-﻿Build started 4/29/2012 6:02:14 AM.
+﻿Build started 4/29/2012 6:45:46 AM.
+     1>Project "C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\IK.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Release\IK.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /I"C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\src\include" /I"C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\src\include\cl" /I"C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\src\include\vl" /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D WIN32 /D NDEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt src\ArticulatedBody.cpp src\C3dFileInfo.cpp src\Command.cpp src\Dof.cpp src\GLPrimitives.cpp src\Main.cpp src\Marker.cpp src\ModelParser.cpp src\PhylterGLWindow.cpp src\RealTimeIKui.cpp src\RotateEuler.cpp src\Scale.cpp src\skel_scanner.cpp src\Solver.cpp src\Trackball.cpp src\TransformNode.cpp src\Translate.cpp src\UICallback.cpp
+         ArticulatedBody.cpp
+         C3dFileInfo.cpp
+     1>src\C3dFileInfo.cpp(21): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>src\C3dFileInfo.cpp(41): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+         Command.cpp
+     1>src\Command.cpp(47): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+         Dof.cpp
+         GLPrimitives.cpp
+         Main.cpp
+         Marker.cpp
+         ModelParser.cpp
+     1>skel.y(364): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>skel.y(380): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>skel.y(574): warning C4996: 'strncpy': This function or variable may be unsafe. Consider using strncpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(188) : see declaration of 'strncpy'
+     1>skel.y(798): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+         PhylterGLWindow.cpp
+         RealTimeIKui.cpp
+         RotateEuler.cpp
+     1>src\RotateEuler.cpp(37): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+         Scale.cpp
+     1>src\Scale.cpp(24): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>src\Scale.cpp(49): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>src\Scale.cpp(54): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>src\Scale.cpp(59): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+         skel_scanner.cpp
+     1>c:\users\joe\documents\visual studio 2010\projects\ik\4496p4\src\ModelParser.h(29): warning C4005: 'CONST' : macro redefinition
+                 C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\include\windef.h(149) : see previous definition of 'CONST'
+         Solver.cpp
+         Trackball.cpp
+         TransformNode.cpp
+         Translate.cpp
+     1>src\Translate.cpp(24): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(105) : see declaration of 'strcpy'
+     1>src\Translate.cpp(52): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>src\Translate.cpp(57): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+     1>src\Translate.cpp(62): warning C4996: 'sprintf': This function or variable may be unsafe. Consider using sprintf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(371) : see declaration of 'sprintf'
+         UICallback.cpp
+       Link:
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\IK.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\lib" comctl32.lib glu32.lib opengl32.lib fltkgl.lib vl.lib fltk.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\IK.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\IK.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\IK.lib" /MACHINE:X86 Release\ArticulatedBody.obj
+         Release\C3dFileInfo.obj
+         Release\Command.obj
+         Release\Dof.obj
+         Release\GLPrimitives.obj
+         Release\Main.obj
+         Release\Marker.obj
+         Release\ModelParser.obj
+         Release\PhylterGLWindow.obj
+         Release\RealTimeIKui.obj
+         Release\RotateEuler.obj
+         Release\Scale.obj
+         Release\skel_scanner.obj
+         Release\Solver.obj
+         Release\Trackball.obj
+         Release\TransformNode.obj
+         Release\Translate.obj
+         Release\UICallback.obj
+         Generating code
+         Finished generating code
+     1>fltkgl.lib(Fl_Gl_Choice.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltkgl.lib(Fl_Gl_Device_Plugin.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltkgl.lib(Fl_Gl_Window.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltkgl.lib(gl_draw.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>vl.lib(Basics.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>vl.lib(LibVLd.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(case.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(filename_absolute.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(filename_expand.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(filename_isdir.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(filename_list.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(filename_match.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_abort.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_arc.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_arci.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_ask.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Bitmap.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Box.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_boxtype.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Browser.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Browser_.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Button.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Check_Button.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Choice.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_color.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_compose.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Counter.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_cursor.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_curve.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Device.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_dnd.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Double_Window.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_draw.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_draw_image.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_draw_pixmap.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_File_Browser.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_File_Chooser.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_File_Chooser2.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_file_dir.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_File_Icon.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_File_Input.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_font.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_get_key.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_get_system_colors.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_grab.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Group.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_gtk.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Image.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Input.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Input_.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_labeltype.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Light_Button.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_line_style.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_lock.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Menu.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Menu_.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Menu_add.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Menu_Bar.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Menu_Button.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Menu_Window.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Native_File_Chooser.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Paged_Device.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Pixmap.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_plastic.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Preferences.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Printer.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_read_image.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_rect.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Return_Button.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Roller.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_round_box.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Scroll.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_scroll_area.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Scrollbar.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Shared_Image.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_shortcut.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Single_Window.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Slider.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_symbols.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Tile.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Tiled_Image.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Tooltip.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_utf.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_utf8.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Valuator.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Value_Slider.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(fl_vertex.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_visual.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Widget.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Window.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_Window_hotspot.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_XBM_Image.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(Fl_XPM_Image.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(flstring.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(is_spacing.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(numericsort.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(ps_image.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(scandir.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(screen_xywh.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+     1>fltk.lib(vsnprintf.obj) : warning LNK4204: 'C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\vc100.pdb' is missing debugging information for referencing module; linking object as if no debug info
+         IK.vcxproj -> C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\IK.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\Release\IK.exe;#1" /manifest Release\IK.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Release\IK.unsuccessfulbuild".
+         Touching "Release\IK.lastbuildstate".
+     1>Done Building Project "C:\Users\Joe\Documents\Visual Studio 2010\Projects\IK\4496p4\IK.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.01
+Time Elapsed 00:00:28.68

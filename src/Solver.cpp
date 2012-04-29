@@ -42,11 +42,11 @@ Solver::~Solver()
 
 void Solver::solve() {
 	// Utility constants
-	const int sIFreq = 20;		//STEP_INCREASE_FREQUENCY
-	const double sIF = 4.0;	//STEP_INCREASE_FACTOR
-	const double sDF = 2.0;	//STEP_DECREASE_FACTOR
-	const int eIFreq = 2;		//EPSILON_INCREASE_FREQUENCY
-	const double eIF = 2.0;	//EPSILON_INCREASE_FACTOR
+	const int sIFreq = 20;
+	const double sIF = 4.0;
+	const double sDF = 2.0;
+	const int eIFreq = 2;
+	const double eIF = 2.0;
 	// Loop over all valid frames
 	for (int f = 0; f < mMaxFrames; f++)
 	{
@@ -75,6 +75,7 @@ void Solver::solve() {
 			//Update objective function
 			o += cLength; 
 		}
+		std::cout << "o = " << o << std::endl;
 		
 		// Main loop
 		double e = mEps;
