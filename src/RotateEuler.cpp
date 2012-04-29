@@ -138,3 +138,42 @@ Mat4d RotateEuler::GetTransform()
   return m;
 }
 
+Mat4d RotateEuler::GetDeriv(int dof)
+{
+	Mat4d m = vl_0;
+
+	int axis;
+	double c = cos(mAngle);
+	double s = sin(mAngle);
+
+	if(mAxis[0])
+		axis = 0;
+	else if(mAxis[1])
+		axis = 1;
+	else if(mAxis[2])
+		axis  = 2;
+
+	switch(axis)
+    {	
+	case 0:
+		m[1][1] = -s;
+		m[1][2] = -c;
+		m[2][1] = c;
+		m[2][2] = -s;
+		break;
+	case 1:
+		m[0][0] = -s;
+		m[0][2] = c;
+		m[2][0] = -c;
+		m[2][2] = -s;
+		break;
+	case 2:
+		m[0][0] = -s;
+		m[0][1] = -c;
+		m[1][0] = c;
+		m[1][1] = -s;
+		break;
+	}
+
+	return m;
+}

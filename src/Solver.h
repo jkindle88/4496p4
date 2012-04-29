@@ -29,8 +29,8 @@ public:
 	// Attempting to speed up lookup a little bit...
 	// Newton-Raphson method
 	// Used to map an ID to a Matrix
-	std::map<int, Mat4d> left;
-	std::map<int, Mat4d> right;
+	std::map<int, Mat4d> leftMap;
+	std::map<int, Mat4d> rightMap;
 
 	//Main Loop
 	void solve();
@@ -38,7 +38,7 @@ public:
 	void buildConstraintMat(int frameNumber);
 	//Jacobian fun
 	Matd computeJ(std::vector<Marker*> handles, int cID);
-	void computeJ(std::vector<Marker*> handles, int cID, Matd &J, TransformNode *node, Vec4d &pos, Mat4d &identity);
+	void computeJ(Matd &J, TransformNode *node, Vec4d &pos, Mat4d &transformationMatrix);
 };
 
 //Type definition for the current marker handles

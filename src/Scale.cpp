@@ -70,3 +70,10 @@ Mat4d Scale::GetTransform()
   m[3][3] = 1;
   return m;
 }
+
+Mat4d Scale::GetDeriv(int dof)
+{
+	Mat4d m = vl_0;
+	m[dof][dof] = 1;
+	return m;
+}

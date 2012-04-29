@@ -26,6 +26,8 @@ Solver::Solver(double eps, double step, int maxIterations, int maxFrames, Model 
 	Solver::mMaxIters = maxIterations;
 	Solver::mMaxFrames = maxFrames;
 	Solver::mModel = model;
+	Solver::leftMap;
+	Solver::rightMap;
 }
 
 // Destructor
@@ -45,10 +47,10 @@ void Solver::solve() {
 	const double sDF = 2.0;	//STEP_DECREASE_FACTOR
 	const int eIFreq = 2;		//EPSILON_INCREASE_FREQUENCY
 	const double eIF = 2.0;	//EPSILON_INCREASE_FACTOR
-
 	// Loop over all valid frames
 	for (int f = 0; f < mMaxFrames; f++)
 	{
+		std::cout << "Starting frame " << f << std::endl;
 		// Build C[]
 		buildConstraintMat(f);
 
@@ -94,7 +96,14 @@ void Solver::solve() {
 				//Get Jacobian
 				Matd J = computeJ(mModel->mHandleList, constraintIDs[i]);
 
+				//Calculate current and add to gradient matrix
+				Vecd currentVal = J * cVec;
+				gradient = gradient + currentVal;
+
 			}
+
+			// Finally, double it
+			gradient = 2.0 * gradient;
 
 			// Get previous DOFs
 			Vecd prevDofs;
@@ -105,21 +114,39 @@ void Solver::solve() {
 			Vecd nextDofs = prevDofs - s * gradient;
 			mModel->SetDofs(nextDofs);
 
-			// Recalculate constraints
-			CalculateConstraints(f);
-			// Recalculate objective function
-			double newObjectiveFunction = EvaluateObjectiveFunction(f);
+			
+			// Recalculate constraints and objective function
+			double newO = 0.0;
 
-			/*
-			if (newObjectiveFunction < objectiveFunction)
+			Markers &handles = mModel->mHandleList;
+			for (int i = 0; i < constraintIDs.size(); i++)
+			{
+				// Get handle and target position for the given constraint
+				Marker *h = handles[constraintIDs[i]];
+				Vec3d cPos = mModel->mOpenedC3dFile->GetMarkerPos(f, constraintIDs[i]);
+
+				// Calculate values and store
+				Vec3d cVal = h->mGlobalPos - cPos;
+				double cLength = sqrlen(cVal);
+
+				//Store results
+				constraintVals.push_back(cVal);
+				constraintLengths.push_back(cLength);
+
+				//Update objective function
+				newO += cLength; 
+			}
+
+			
+			if (newO < o)
 			{
 				
-				if (newObjectiveFunction > mEps && iterCount > 0 && iterCount % sIFreq == 0)
+				if (newO > mEps && iterCount > 0 && iterCount % sIFreq == 0)
 				{
 					s *= sIF;
 				}
 
-				objectiveFunction = newObjectiveFunction;
+				o = newO;
 				
 			}
 			else
@@ -130,15 +157,15 @@ void Solver::solve() {
 				s = s / sDF;
 				
 				// based on how many times we've had to decrease the step, choose different options
-				if (stepCount < mMaxIterations)
+				if (stepCount < mMaxIters)
 				{
 					// Reset to the previous dofs and try again
 					mModel->SetDofs(prevDofs);
 				}
-				else if (stepCount < eIFreq*mMaxIterations)
+				else if (stepCount < eIFreq*mMaxIters)
 				{
 					// Try increasing epsilon
-					localEpsilon *= mEpsilonIncreaseFactor;
+					e *= eIF;
 
 					// Reset to the previous dofs and try again
 					mModel->SetDofs(prevDofs);
@@ -146,19 +173,19 @@ void Solver::solve() {
 				else
 				{
 					// Otherwise, give up
-					objectiveFunction = 0.0;
+					o = 0.0;
 				}
-			}*/
+			}
 
 			// Update iteration counter
 			iterCount++;
 		}
-
 		// Update the frame counter
 		UI->mFrameCounter_cou->value(f);
 
 		//Refresh the screen
 		UI->mGLWindow->flush();
+		std::cout << "Ending frame " << f << std::endl;
 	}	
 }
 
@@ -197,7 +224,7 @@ Matd Solver::computeJ(Markers handles, int cID){
 	identity.MakeDiag(1.0);
 
 	// Recursively create Jacobian
-	computeJ(handles, cID, J, node, tempPos, identity);
+	computeJ(J, node, tempPos, identity);
 
 	return J;
 }
@@ -205,35 +232,95 @@ Matd Solver::computeJ(Markers handles, int cID){
 /*
 * Jacobian recursive worker method
 */
-void computeJ(std::vector<Marker*> handles, int cID, Matd &J, TransformNode *node, Vec4d &pos, Mat4d &identity) {
+void Solver::computeJ(Matd &J, TransformNode *node, Vec4d &pos, Mat4d &trans) {
 
 	// Get initial transform data
 	std::vector<Transform *> transforms = node->mTransforms;
 
-	// loop over all transforms in node, figuring out
-	// appropriate pre-matrix for each DOF transform
+	// LEFT MATRIX
 	Mat4d leftMat;
-	preMatrix.MakeDiag(1.0);	// start off as identity
+	leftMat.MakeDiag(1.0);	// identity
 	for (int i = 0; i < transforms.size(); i++)
 	{
-		Transform * transform = transforms[i];
-		// only need to calculate if DOF transform
-		if (transform->IsDof())
+		Transform *tr = transforms[i];
+		// Only need to calculate if DOF
+		if (tr->IsDof())
 		{
-			// loop through each dof
-			for (int j = 0; j < transform->GetDofCount(); j++)
+			for (int j = 0; j < tr->GetDofCount(); j++)
 			{
-				// get dof
-				Dof * dof = transform->GetDof(j);
+				// Get DOF
+				Dof *dof = tr->GetDof(j);
 				int dofId = dof->mId;
 
-				// place in appropriate spot in map
-				mPreMatrices[dofId] = preMatrix;
+				// Add to our map
+				leftMap[dofId] = leftMat;
 			}
 		}
-		// now that we've gone through this transform, 
-		// update the preMatrix to have current transform for later transforms
-		preMatrix = preMatrix * transform->GetTransform();
+		// Now update leftMat
+		leftMat = leftMat * tr->GetTransform();
+	}
+
+	// RIGHT MATRIX
+	Mat4d rightMat;
+	rightMat.MakeDiag(1.0);	// identity
+	for (int i = transforms.size()-1; i >= 0; i--)
+	{
+		Transform *tr = transforms[i];
+		// Only need to calculate if DOF
+		if (tr->IsDof())
+		{
+			for (int j = tr->GetDofCount()- 1; j >= 0 ; j--)
+			{
+				// Get DOF
+				Dof *dof = tr->GetDof(j);
+				int dofId = dof->mId;
+
+				// Add to our map
+				rightMap[dofId] = rightMat;
+			}
+		}
+		// Now update leftMat
+		rightMat = tr->GetTransform() * rightMat;
+	}
+
+	// JACOBIAN
+	Mat4d pTrans = node->mParentTransform;
+
+	// New identity matrix for later use
+	Mat4d newTransform;
+	newTransform.MakeDiag(1.0);
+
+	for (int i = 0; i < transforms.size(); i++)
+	{		
+		// Check if DOF, if so compute derivative
+		Transform *tr = transforms[i];
+		if (tr->IsDof())
+		{
+			for (int j = 0; j < tr->GetDofCount(); j++)
+			{
+				Mat4d deriv = tr->GetDeriv(j);
+
+				// Get row
+				Dof * dof = tr->GetDof(j);
+				int dofId = dof->mId;
+
+				Mat4d leftMat = leftMap[dofId];
+				Mat4d rightMat = rightMap[dofId];
+				Vec4d value = pTrans * leftMat * deriv * rightMat * trans * pos;
+
+				J[dofId] = value;
+			}
+		}
+
+		newTransform = newTransform * tr->GetTransform();
+	}
+	// Calculate J[] values for parent if necessary
+	TransformNode *parent = node->mParentNode;
+	// If the parent is non-null and not the current node
+	if (parent != NULL && parent != node)
+	{
+		newTransform = newTransform * trans;
+		computeJ(J, parent, pos, newTransform);
 	}
 }
 

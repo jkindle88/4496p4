@@ -45,6 +45,7 @@ class RotateEuler : public Transform
   virtual ~RotateEuler(){};
 
   virtual Mat4d GetTransform();
+  virtual Mat4d GetDeriv(int dof);
 
   // from Transform
   virtual void Apply();

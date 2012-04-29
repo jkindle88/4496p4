@@ -54,6 +54,7 @@ class Scale : public Transform
   // from Transform
   virtual void Apply() { glScaled( mScale[0], mScale[1], mScale[2] ); }
   virtual Mat4d GetTransform();
+  virtual Mat4d GetDeriv(int dof);
         
   virtual bool IsDof() { return (mDofs[0]!=0); }
   virtual int GetDofCount() { return 3; }

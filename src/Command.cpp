@@ -102,21 +102,22 @@ void LoadC3d(void *v)
 void Solution(void *v)
 {
     cout << "TODO: Solve inverse kinematics problem" << endl;
-    bool test = UI->mData->mSelectedModel->mLimbs[0]->mTransforms[0]->IsDof();
+    //bool test = UI->mData->mSelectedModel->mLimbs[0]->mTransforms[0]->IsDof();
 
 	Model *m = UI->mData->mSelectedModel;
 	
-	double eps = 0.01; // minimize the step size
-	double step = 0.001;
-	int maxIterations = 250;  // Play with this
+	double eps = 0.1; // minimize the step size
+	double step = 0.01;
+	int maxIterations = 25;  // Play with this
 	int maxFrames = m->mOpenedC3dFile->GetFrameCount();
 
 	// setup solver
 	Solver s(eps, step, maxIterations, maxFrames, m);
 
+	cout << "Solver beginning..." << endl;
 	// run solver
 	s.solve();
-
+	cout << "Solver complete." << endl;
 }
 
 
